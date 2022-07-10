@@ -13,6 +13,7 @@ let useLowerCase = false
 let useNumbers = false
 let useSpecialCharacters = false
 
+
 // Write password to the #password input
 
 var generatePassword = function () {
@@ -21,6 +22,17 @@ var generatePassword = function () {
 
 function writePassword() {
   var numChar = window.prompt("How many characters do you want?");
+
+  if (numChar > 128) {
+    window.alert("Please insert a value less than 128")
+    return
+  }
+
+  if (numChar < 8) {
+    window.alert("Please insert a value greater than 8")
+    return
+  }
+
   useUpperCase = window.confirm("Do you want to include Uppercase?");
   useLowerCase = window.confirm("Do you want to include Lowercase?");
   useNumbers = window.confirm("Do you want to include Numbers?");
@@ -40,8 +52,14 @@ function writePassword() {
 
   if(useSpecialCharacters){
     passwordSeed += specialCharacters;
+  } else if (!useSpecialCharacters) {
+    let specificChar = window.prompt("Please insert at least one Specific Character");
+    passwordSeed += specificChar;
+    console.log(specificChar)
+  } else {
+    return
   }
-
+  
   console.log(passwordSeed)
   length = numChar;
 
