@@ -8,7 +8,9 @@ Password Generator is a website to create secure passwords on an easier way, you
 ## Features
 
 - You can choose how many characters will compose your password
-- Select what kind of characters do you want
+- Restricted number of characters (8-128)
+- If you don't select special characters, it let you insert at least one 
+- Select what kind of characters (Uppercase, lowercase, numbers and special characters) do you want
 - Easy to see the generated password
 - No adds to use it
 
